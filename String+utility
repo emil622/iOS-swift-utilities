@@ -1,0 +1,6 @@
+
+extension String {
+  var spaceTrimmed: String {
+        return self.trimmingCharacters(in: CharacterSet(charactersIn: " "))
+  }
+}
