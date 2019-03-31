@@ -1,0 +1,17 @@
+import UIKit
+
+extension UINavigationController {
+
+    func makeNavigationBarTransparent() {
+        self.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationBar.shadowImage = UIImage()
+        self.navigationBar.isTranslucent = true
+        self.edgesForExtendedLayout = []
+    }
+
+    func resetNavigationBar() {
+        self.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
+        self.navigationBar.shadowImage = nil
+        self.navigationBar.isTranslucent = false
+    }
+}
