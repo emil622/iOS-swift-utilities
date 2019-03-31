@@ -1,0 +1,10 @@
+extension UIView {
+
+    class func nib<T: UIView>(owner: Any? = nil) -> T {
+        return Bundle.main.loadNibNamed(String(describing: T.self), owner: owner, options: nil)![0] as! T
+    }
+    
+    static var className: String {
+        return String(describing: self)
+    }
+}
