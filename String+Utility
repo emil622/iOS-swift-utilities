@@ -1,6 +1,11 @@
 
 extension String {
+
   var spaceTrimmed: String {
         return self.trimmingCharacters(in: CharacterSet(charactersIn: " "))
+  }
+  
+  func localized(bundle: Bundle = .main, tableName: String = "Localizable") -> String {
+        return NSLocalizedString(self, tableName: tableName, value: "**\(self)**", comment: "")
   }
 }
