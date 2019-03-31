@@ -1,0 +1,15 @@
+import Foundation
+
+extension Bundle {
+    
+    var versionNumber: String? {
+        return infoDictionary?["CFBundleShortVersionString"] as? String
+    }
+    var buildNumber: String? {
+        return infoDictionary?["CFBundleVersion"] as? String
+    }
+    
+    static var isDevelopment: Bool {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String ?? "" == "you-dev-target-name"
+    }
+}
